@@ -5,12 +5,7 @@ import logging
 import datetime
 from api_keys import TMDB_API_KEY, OMDB_API_KEY
 from urllib.parse import quote
-
-DB_PATH = "movierater.db"
-RSS_FEED_URL = "https://mediathekviewweb.de/feed"
-TMDB_API_URL = "https://api.themoviedb.org"
-OMDB_API_URL = "http://www.omdbapi.com"
-LANGUAGE = "de"
+from config import DB_PATH, RSS_FEED_URL, TMDB_API_URL, OMDB_API_URL, LANGUAGE
 
 logging.basicConfig(
     level=logging.INFO,
