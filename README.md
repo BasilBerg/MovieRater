@@ -2,7 +2,7 @@ MovieRater
 ==========
 
 
-MovieRater is specifically designed for content from the media libraries of German public broadcasters and uses the RSS feed from [MediathekViewWeb](https://github.com/mediathekview/mediathekviewweb). It automatically collects and enriches movie and TV show data, stores everything in a local SQLite database, and provides a sortable web interface for browsing entries. 
+MovieRater is specifically designed for content from the media libraries of German public broadcasters and uses the RSS feed from [MediathekViewWeb](https://github.com/mediathekview/mediathekviewweb). It automatically collects and enriches movie and TV show data, stores everything in a local SQLite database, and provides a sortable web interface for browsing entries. The RSS Feed will periodically be checked for new entries.  
 While made for this purpose, it can be adapted for other RSS feeds with minor modifications.
 ## Obtaining API Keys
 To use MovieRater, you will need API keys for both The Movie Database (TMDb) and the Open Movie Database (OMDb).  
@@ -60,3 +60,4 @@ Get your OMDb API key here: https://www.omdbapi.com/apikey.aspx
    ```
 
 4. Access the web interface at [http://localhost:5000](http://localhost:5000)
+
