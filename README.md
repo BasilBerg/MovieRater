@@ -36,7 +36,7 @@ Get your OMDb API key here: https://www.omdbapi.com/apikey.aspx
    ```yaml
     services:
       movierater:
-        image: basilberg/movierater:amd64 # or basilberg/movierater:arm64
+        image: basilberg/movierater:latest
         container_name: movierater
         restart: unless-stopped
         volumes:
