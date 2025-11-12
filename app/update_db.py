@@ -3,9 +3,11 @@ import feedparser
 import sqlite3
 import logging
 import datetime
-from api_keys import TMDB_API_KEY, OMDB_API_KEY
 from urllib.parse import quote
-from config import DB_PATH, RSS_FEED_URL, TMDB_API_URL, OMDB_API_URL, LANGUAGE
+from app import DB_PATH, RSS_FEED_URL, TMDB_API_URL, OMDB_API_URL, LANGUAGE, TMDB_API_KEY, OMDB_API_KEY
+
+
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -230,7 +232,3 @@ def main():
             item['type'] = None
         save_to_db(item)
         logger.info(f"Saved: {item['title']}")
-
-
-if __name__ == "__main__":
-    main()

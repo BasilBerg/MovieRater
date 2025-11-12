@@ -1,0 +1,18 @@
+services:
+      movierater:
+        image: basilberg/movierater:arm64 # or basilberg/movierater:amd64
+        container_name: movierater
+        restart: unless-stopped
+        volumes:
+          - ./movierater.db:/data
+        ports:
+          - "5000:5000"
+        environment:
+          TMDB_API_KEY: ${TMDB_API_KEY}
+          OMDB_API_KEY: ${OMDB_API_KEY}
+          #DB_PATH: "/data/movierater.db"
+          #RSS_FEED_URL: "https://mediathekviewweb.de/feed"
+          #TMDB_API_URL: "https://api.themoviedb.org"
+          #OMDB_API_URL: "http://www.omdbapi.com"
+          #LANGUAGE: "de"
+          #UPDATE_INTERVAL: 24

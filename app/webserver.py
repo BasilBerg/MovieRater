@@ -1,16 +1,16 @@
 from flask import Flask, render_template_string, request
 import sqlite3
 from datetime import datetime
-from config import DB_PATH
+from app import DB_PATH
 
 app = Flask(__name__)
-DB_PATH = "movierater.db"
 
 SORTABLE_COLUMNS = [
     "creator", "title", "category", "duration", "vote_average",
     "imdb_id", "imdb_rating", "rotten_tomatoes", "metacritic",
     "media_type", "downloaded", "created_at"
 ]
+
 
 
 @app.route("/")
@@ -26,7 +26,6 @@ def index():
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
 
-    # Dynamisches ORDER BY
     query = f"""
         SELECT
             creator, title, link, category, duration, vote_average,
@@ -136,6 +135,3 @@ def index():
         next_order=next_order
     )
 
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8081)
